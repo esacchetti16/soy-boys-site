@@ -1,4 +1,4 @@
-﻿import NavBar from '../components/NavBar'
+import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import ProductCard from '../components/ProductCard'
 import {client} from '../lib/sanity'

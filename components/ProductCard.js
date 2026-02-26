@@ -1,4 +1,4 @@
-﻿export default function ProductCard({product}){
+export default function ProductCard({product}){
   return (
     <article className=\"card\">
       <div style={{height:140,background:'#f4f4f4',borderRadius:6,display:'flex',alignItems:'center',justifyContent:'center'}}>

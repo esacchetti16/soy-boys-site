@@ -1,4 +1,4 @@
-﻿import NavBar from '../components/NavBar'
+import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import ProductCard from '../components/ProductCard'
 import {client} from '../lib/sanity'
@@ -16,7 +16,7 @@ export default function Home({products}){
       <main className=\"container\">
         <section className=\"site-hero\" style={{marginTop:12}}>
           <h1>Soy Boys Kitchen</h1>
-          <p style={{maxWidth:720}}>Plant-based comfort with personality â€” bold flavors, playful vibes. Explore our meals and wholesale services.</p>
+          <p style={{maxWidth:720}}>Plant-based comfort with personality Ã¢â‚¬â€ bold flavors, playful vibes. Explore our meals and wholesale services.</p>
         </section>
 
         <section style={{marginTop:18}}>
