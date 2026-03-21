@@ -1,16 +1,36 @@
-﻿:root{
+﻿@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+:root{
   --sb-red:#c60b1e; /* bills-like red */
   --sb-blue:#00338d; /* bills-like blue */
   --sb-yellow:#ffd400;
+  --sb-fun: 'Lilita One', Impact, Arial, sans-serif;
 }
 html,body,#__next{height:100%;}
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
-  margin:0;
-  color:#111;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  margin: 0;
+  color: #111;
   background: #fff7e6 url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg"><path d="M0,200 Q300,100 600,200 T1200,200 V0 H0 Z" fill="%23ff9800"/><path d="M0,200 Q400,50 800,200 T1200,200 V0 H0 Z" fill="%23ff5722"/><path d="M0,200 Q600,0 1200,200 V0 H0 Z" fill="%23ffc107"/></svg>') repeat-x;
   background-size: 100% 220px;
   background-position: bottom;
+}
+
+h1, h2, h3, .site-hero h1, .nav, nav a {
+  font-family: var(--sb-fun);
+}
+
+.site-hero h1 {
+  font-size: 3rem;
+  letter-spacing: 1.5px;
+}
+
+nav a, .nav a {
+  text-decoration: none !important;
+  font-size: 1.25rem;
+  color: #c60b1e;
+  transition: color 0.2s;
+}
+nav a:hover, .nav a:hover {
+  color: #00338d;
 }
 .container{max-width:1100px;margin:0 auto;padding:24px}
 .site-hero{background:linear-gradient(90deg,var(--sb-red),var(--sb-blue));color:white;padding:48px;border-radius:8px}
