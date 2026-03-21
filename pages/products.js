@@ -1,7 +1,6 @@
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
-import { client } from '../lib/sanity';
 
 const sampleProducts = [
   { title: 'Yummy Noodle Bowl', description: 'Refreshing soba noodles with glazed tofu and pickled vegetables', image: '' },
@@ -25,15 +24,5 @@ export default function Products({ products }) {
 }
 
 export async function getStaticProps() {
-  if (!process.env.SANITY_PROJECT_ID) {
-    return { props: { products: sampleProducts } };
-  }
-
-  const query = '*[_Type==\"product\"]{title,description,\"image\": image.asset->url}'
-  try{
-    const products = await client.fetch(query)
-    return {props:{products}}
-  }catch(e){
-    return {props:{products:sampleProducts}}
-  }
+  return { props: { products: sampleProducts } };
 }
