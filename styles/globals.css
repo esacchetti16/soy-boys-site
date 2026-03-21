@@ -4,7 +4,14 @@
   --sb-yellow:#ffd400;
 }
 html,body,#__next{height:100%;}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0;color:#111}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  margin:0;
+  color:#111;
+  background: #fff7e6 url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg"><path d="M0,200 Q300,100 600,200 T1200,200 V0 H0 Z" fill="%23ff9800"/><path d="M0,200 Q400,50 800,200 T1200,200 V0 H0 Z" fill="%23ff5722"/><path d="M0,200 Q600,0 1200,200 V0 H0 Z" fill="%23ffc107"/></svg>') repeat-x;
+  background-size: 100% 220px;
+  background-position: bottom;
+}
 .container{max-width:1100px;margin:0 auto;padding:24px}
 .site-hero{background:linear-gradient(90deg,var(--sb-red),var(--sb-blue));color:white;padding:48px;border-radius:8px}
 .nav{display:flex;gap:16px;align-items:center}
