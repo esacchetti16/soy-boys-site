@@ -5,8 +5,7 @@ export default function NavBar() {
     <header style={{ padding: '12px 24px' }}>
       <nav className='nav container'>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div className='logo-placeholder'>Logo</div>
-          <strong>Soy Boys</strong>
+          <img src="/images/soy-boys.png" alt="Soy Boys Logo" style={{ height: 80, width: 'auto', display: 'block' }} />
         </div>
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 12 }}>
           <Link href='/'>Home</Link>

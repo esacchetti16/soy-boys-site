@@ -12,14 +12,14 @@ html,body,#__next{
   background: #fff7e6;
 }
 
-h1, h2, h3, .site-hero h1, .nav, nav a {
-  font-family: var(--sb-fun);
-}
+/* Double heading font sizes and keep fun font */
+h1, .site-hero h1 { font-family: var(--sb-fun); font-size: 6rem !important; letter-spacing: 1.5px; }
+h2 { font-family: var(--sb-fun); font-size: 4rem !important; }
+h3 { font-family: var(--sb-fun); font-size: 2.5rem !important; }
+.nav, nav a { font-family: var(--sb-fun); }
 
-.site-hero h1 {
-  font-size: 3rem;
-  letter-spacing: 1.5px;
-}
+/* Remove colored box from hero */
+.site-hero { background: none !important; color: inherit !important; padding: 24px 0 0 0 !important; border-radius: 0 !important; }
 
 nav a, .nav a {
   text-decoration: none !important;
@@ -35,4 +35,4 @@ nav a:hover, .nav a:hover {
 .nav{display:flex;gap:16px;align-items:center}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
 .card{background:#fff;border-radius:8px;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-.logo-placeholder{width:120px;height:80px;background:linear-gradient(45deg,var(--sb-yellow),#fff);display:flex;align-items:center;justify-content:center;border-radius:8px}
+.logo-placeholder{display:none}
