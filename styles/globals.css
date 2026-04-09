@@ -13,10 +13,12 @@ html,body,#__next{
 }
 
 /* Double heading font sizes and keep fun font */
-h1, .site-hero h1 { font-family: var(--sb-fun); font-size: 6rem !important; letter-spacing: 1.5px; }
-h2 { font-family: var(--sb-fun); font-size: 4rem !important; }
-h3 { font-family: var(--sb-fun); font-size: 2.5rem !important; }
-.nav, nav a { font-family: var(--sb-fun); }
+body, h1, h2, h3, .site-hero h1, .nav, nav a, .nav * {
+  font-family: var(--sb-fun) !important;
+}
+h1, .site-hero h1 { font-size: 6rem !important; letter-spacing: 1.5px; }
+h2 { font-size: 4rem !important; }
+h3 { font-size: 2.5rem !important; }
 
 /* Remove colored box from hero */
 .site-hero { background: none !important; color: inherit !important; padding: 24px 0 0 0 !important; border-radius: 0 !important; }

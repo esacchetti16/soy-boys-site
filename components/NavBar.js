@@ -2,20 +2,18 @@ import Link from 'next/link';
 
 export default function NavBar() {
   return (
-    <header style={{ padding: '24px 0 0 0', background: 'none' }}>
-      <nav className='nav container' style={{ flexDirection: 'column', alignItems: 'center', gap: 0 }}>
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 8 }}>
-          <img src="/images/soy-boys.png" alt="Soy Boys Logo" style={{ height: 120, width: 'auto', display: 'block', margin: '0 auto' }} />
-        </div>
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: 24, marginBottom: 8 }}>
-          <Link href='/'><span style={{padding:'8px 0',display:'inline-block'}}>Home</span></Link>
-          <Link href='/products'><span style={{padding:'8px 0',display:'inline-block'}}>Products</span></Link>
-          <Link href='/locations'><span style={{padding:'8px 0',display:'inline-block'}}>Where to find us</span></Link>
-          <Link href='/services'><span style={{padding:'8px 0',display:'inline-block'}}>Services</span></Link>
-          <Link href='/about'><span style={{padding:'8px 0',display:'inline-block'}}>About</span></Link>
-          <Link href='/contact'><span style={{padding:'8px 0',display:'inline-block'}}>Contact</span></Link>
-        </div>
+    <header style={{ position: 'sticky', top: 0, zIndex: 100, background: '#fff7e6', padding: '0 0 0 0', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
+      <nav className='nav container' style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, fontFamily: "'Lilita One', Impact, Arial, sans-serif", fontSize: '2rem', letterSpacing: '0.5px', padding: '12px 0' }}>
+        <Link href='/'><span>Home</span></Link>
+        <Link href='/products'><span>Products</span></Link>
+        <Link href='/locations'><span>Where to find us</span></Link>
+        <Link href='/services'><span>Services</span></Link>
+        <Link href='/about'><span>About</span></Link>
+        <Link href='/contact'><span>Contact</span></Link>
       </nav>
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto', background: 'none' }}>
+        <img src="/images/soy-boys.png" alt="Soy Boys Logo" style={{ height: 180, width: 'auto', display: 'block', margin: '0 auto' }} />
+      </div>
     </header>
   );
 }
