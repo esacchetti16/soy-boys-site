@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 export default function NavBar() {
   return (
-    <header style={{ position: 'sticky', top: 0, zIndex: 100, background: '#fff7e6', padding: '0 0 0 0', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
-      <nav className='nav container' style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, fontFamily: "'Lilita One', Impact, Arial, sans-serif", fontSize: '2rem', letterSpacing: '0.5px', padding: '12px 0' }}>
+    <header style={{ position: 'sticky', top: 0, zIndex: 100, background: '#fff7e6cc', padding: '0 0 0 0', boxShadow: '0 2px 12px rgba(0,0,0,0.07)', backdropFilter: 'blur(4px)' }}>
+      <nav className='nav container' style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 40, fontFamily: "'Lilita One', Impact, Arial, sans-serif", fontSize: '2.5rem', letterSpacing: '0.5px', padding: '18px 0 10px 0', fontWeight: 700 }}>
         <Link href='/'><span>Home</span></Link>
         <Link href='/products'><span>Products</span></Link>
         <Link href='/locations'><span>Where to find us</span></Link>
@@ -12,7 +12,7 @@ export default function NavBar() {
         <Link href='/contact'><span>Contact</span></Link>
       </nav>
       <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto', background: 'none' }}>
-        <img src="/images/soy-boys.png" alt="Soy Boys Logo" style={{ height: 180, width: 'auto', display: 'block', margin: '0 auto' }} />
+        <img src="/images/soy-boys.png" alt="Soy Boys Logo" style={{ height: 200, width: 'auto', display: 'block', margin: '0 auto' }} />
       </div>
     </header>
   );
