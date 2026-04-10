@@ -4,17 +4,21 @@ import Footer from '../components/Footer';
 export default function Home() {
   return (
     <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', background: '#fff7e6' }}>
-      {/* Blurred flames at bottom, cropped, mascots in front */}
-      <div style={{ position: 'fixed', left: 0, bottom: 0, width: '100vw', height: '38vh', zIndex: 0, pointerEvents: 'none', userSelect: 'none', overflow: 'hidden' }}>
-        <img src="/images/flames.png" alt="Flames background" style={{ position: 'absolute', left: 0, bottom: '-10%', width: '100vw', height: 'auto', minHeight: 180, objectFit: 'cover', opacity: 0.8, filter: 'blur(3.5px) brightness(1.08)' }} />
-        <img src="/images/soy-boy-2.png" alt="Soy Boy 2" style={{ position: 'absolute', left: '-6vw', bottom: '10%', width: '38vw', minWidth: 320, maxWidth: 600, opacity: 1, filter: 'blur(2.5px)' }} />
-        <img src="/images/soy-boy-1.png" alt="Soy Boy 1" style={{ position: 'absolute', right: '-6vw', bottom: '10%', width: '38vw', minWidth: 320, maxWidth: 600, opacity: 1, filter: 'blur(2.5px)' }} />
+      {/* Blurred flames at bottom, only top visible, mascots much larger and centered vertically */}
+      <div style={{ position: 'fixed', left: 0, bottom: '-12vh', width: '100vw', height: '60vh', zIndex: 0, pointerEvents: 'none', userSelect: 'none', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <img src="/images/flames.png" alt="Flames background" style={{ position: 'absolute', left: 0, bottom: '-10%', width: '100vw', height: 'auto', minHeight: 180, objectFit: 'cover', opacity: 0.92, filter: 'blur(1.5px) brightness(1.08)' }} />
+        <div style={{ position: 'absolute', left: 0, bottom: 0, width: '100vw', height: '100%', background: 'linear-gradient(to top, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.0) 60%)', pointerEvents: 'none' }} />
+        </div>
+        {/* Mascots, much larger, centered vertically, above flames */}
+        <div style={{ position: 'fixed', left: 0, bottom: '10%', width: '100vw', height: '36vh', zIndex: 1, pointerEvents: 'none', userSelect: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <img src="/images/soy-boy-2.png" alt="Soy Boy 2" style={{ marginLeft: '-7vw', width: '64vw', minWidth: 420, maxWidth: 900, opacity: 1, filter: 'blur(2.5px)' }} />
+          <img src="/images/soy-boy-1.png" alt="Soy Boy 1" style={{ marginRight: '-7vw', width: '64vw', minWidth: 420, maxWidth: 900, opacity: 1, filter: 'blur(2.5px)' }} />
       </div>
       <NavBar />
-      <main className='container' style={{ position: 'relative', zIndex: 2, marginTop: 60, marginBottom: 60 }}>
+      <main className='container' style={{ position: 'relative', zIndex: 2, marginTop: 60, marginBottom: 60, fontFamily: "'Segoe UI', Helvetica Neue, Arial, sans-serif" }}>
         <section className='site-hero' style={{ marginTop: 60, marginBottom: 60, fontFamily: "'Segoe UI', Helvetica Neue, Arial, sans-serif", letterSpacing: '0.5px', textAlign: 'center' }}>
           <p style={{ maxWidth: 720, fontFamily: "'Segoe UI', Helvetica Neue, Arial, sans-serif", fontSize: '2rem', margin: '0 auto 48px auto', fontWeight: 400, color: '#222', textShadow: '0 2px 8px #fff7e6cc' }}>
-            Plant-based comfort with personality — <span style={{ color: '#c60b1e', fontWeight: 700 }}>bold flavors</span>, playful vibes.<br />Explore our meals and services.
+            Plant-based comfort with personality — <span style={{ color: '#c60b1e', fontWeight: 700, fontFamily: "'Lilita One', Impact, Arial, sans-serif" }}>bold flavors</span>, playful vibes.<br />Explore our meals and services.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 48, margin: '48px 0', flexWrap: 'wrap' }}>
             <div style={{ width: 320, height: 220, background: '#fffbe6', borderRadius: 18, boxShadow: '0 4px 24px #0001', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
