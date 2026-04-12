@@ -37,6 +37,7 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      {/* Trigger Vercel redeploy: no-op change */}
     </div>
   );
 }
