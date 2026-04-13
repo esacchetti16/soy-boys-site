@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet" />
         <meta property="og:image" content="https://soyboyskitchen.com/thumbnail.png" />
         <meta property="twitter:image" content="https://soyboyskitchen.com/thumbnail.png" />
-        <link rel="icon" type="image/png" href="/images/soy-boy-2.png" />
+        <link rel="icon" type="image/png" href="/images/soy-boy-2-cropped.PNG" />
       </Head>
       <Component {...pageProps} />
     </>
