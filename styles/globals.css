@@ -12,8 +12,10 @@ html,body,#__next{
   background: #fff7e6;
 }
 
-/* Double heading font sizes and keep fun font */
-body, h1, h2, h3, .site-hero h1, .nav, nav a, .nav * {
+h1, h2, h3, .site-hero h1 {
+  font-family: 'Lilita One', Impact, Arial, sans-serif !important;
+}
+body, .nav, nav a, .nav * {
   font-family: var(--sb-fun) !important;
 }
 h1, .site-hero h1 { font-size: 6rem !important; letter-spacing: 1.5px; }
@@ -38,3 +40,73 @@ nav a:hover, .nav a:hover {
 .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
 .card{background:#fff;border-radius:8px;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
 .logo-placeholder{display:none}
+
+/* Mobile NavBar Styles */
+@media (max-width: 900px) {
+  /* Shrink section headers on mobile */
+  h1, .site-hero h1 {
+    font-size: 2.6rem !important;
+    letter-spacing: 1.2px;
+  }
+  h2 {
+    font-size: 1.7rem !important;
+  }
+  h3 {
+    font-size: 1.2rem !important;
+  }
+@media (max-width: 900px) {
+  .nav-mobile {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background: rgba(255,247,230,0.98);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    z-index: 9999;
+  }
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 12px;
+    z-index: 10001;
+  }
+  .hamburger-bar {
+    width: 32px;
+    height: 4px;
+    background: #c60b1e;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .nav-mobile-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background: #fff7e6;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 0 24px 0;
+    z-index: 10000;
+  }
+  .nav-mobile-menu a {
+    font-family: var(--sb-fun);
+    font-size: 2.1rem;
+    color: #c60b1e;
+    text-decoration: none;
+    padding: 16px 32px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-mobile-menu a:hover {
+    background: #ffe7b3;
+    color: #00338d;
+  }
+}

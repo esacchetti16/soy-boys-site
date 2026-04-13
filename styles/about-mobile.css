@@ -1,0 +1,44 @@
+/* Mobile-specific About section font and layout to match Products/Services */
+@media (max-width: 600px) {
+  #about > div {
+    max-width: 98vw !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+  }
+  #about h1, #about h2 {
+    padding-left: 8vw !important;
+    padding-right: 8vw !important;
+    font-size: 2.1rem !important;
+  }
+  #about p, #about span, #about div {
+    font-size: 1.1rem !important;
+    word-break: break-word;
+  }
+  #about .card, #about [style*="width: 220px"] {
+    width: 92vw !important;
+    min-width: 0 !important;
+    max-width: 98vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 10px !important;
+  }
+  #about .about-photos {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    gap: 4vw !important;
+    width: 100% !important;
+    margin: 0 auto 18px auto !important;
+  }
+  #about .about-photos img {
+    width: 44vw !important;
+    max-width: 44vw !important;
+    height: 32vw !important;
+    max-height: 32vw !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+}

@@ -1,0 +1,29 @@
+/* Temporary workaround for PostCSS parse error: move mobile styles to a separate file */
+@media (max-width: 600px) {
+  #products > div {
+    max-width: 98vw !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+  }
+  #products h1, #products h2 {
+    padding-left: 8vw !important;
+    padding-right: 8vw !important;
+    font-size: 2.1rem !important;
+  }
+  #products p, #products span, #products div {
+    font-size: 1.1rem !important;
+    word-break: break-word;
+  }
+  #products .card, #products [style*="width: 220px"] {
+    width: 92vw !important;
+    min-width: 0 !important;
+    max-width: 98vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 10px !important;
+  }
+  #products img {
+    max-width: 90vw !important;
+    height: auto !important;
+  }
+}

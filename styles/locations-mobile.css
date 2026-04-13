@@ -1,0 +1,30 @@
+/* Mobile-specific Mapbox/Locations section width fix */
+@media (max-width: 600px) {
+  #locations > div {
+    max-width: 98vw !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+  }
+  #locations h1, #locations h2 {
+    padding-left: 8vw !important;
+    padding-right: 8vw !important;
+    font-size: 2.1rem !important;
+  }
+  #locations p, #locations span, #locations div {
+    font-size: 1.1rem !important;
+    word-break: break-word;
+  }
+  #locations .card, #locations [style*="width: 220px"] {
+    width: 92vw !important;
+    min-width: 0 !important;
+    max-width: 98vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 10px !important;
+  }
+  #locations img, #locations iframe {
+    max-width: 90vw !important;
+    height: auto !important;
+    border-radius: 12px !important;
+  }
+}

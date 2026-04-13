@@ -1,4 +1,5 @@
 import NavBar from '../components/NavBar';
+import useIsMobile from '../hooks/useIsMobile';
 import FoodSlideshow from '../components/FoodSlideshow';
 import ProductCard from '../components/ProductCard';
 import Footer from '../components/Footer';
@@ -7,62 +8,84 @@ import { useForm, ValidationError } from '@formspree/react';
 
 export default function Home() {
   const [state, handleSubmit] = useForm('mnjlaoyb');
-  
+  const isMobile = typeof window !== 'undefined' ? useIsMobile() : false;
+
   return (
     <>
       {/* Blurred flames at bottom as background layer, outside main content */}
-      <div style={{ position: 'fixed', left: 0, bottom: '-10vh', width: '100vw', height: '65vh', zIndex: -1, pointerEvents: 'none', userSelect: 'none', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ position: 'fixed', left: 0, bottom: isMobile ? '-22vh' : '-10vh', width: '100vw', height: '65vh', zIndex: -1, pointerEvents: 'none', userSelect: 'none', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <img src="/images/flames.png" alt="Flames background" style={{ position: 'absolute', left: '-10vw', bottom: 0, width: '120vw', height: '100%', minHeight: 180, objectFit: 'cover', opacity: 1, filter: 'blur(6px) brightness(1.12)' }} />
         <div style={{ position: 'absolute', left: 0, bottom: 0, width: '100vw', height: '100%', background: 'linear-gradient(to top, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.7) 30%, rgba(255,255,255,0.0) 70%)', pointerEvents: 'none' }} />
       </div>
       <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', background: '#fff' }}>
         {/* Large logo and mascots above Products section */}
         <NavBar />
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto', background: 'none', marginBottom: 24, marginTop: '8vh', gap: 0, position: 'relative', zIndex: 2, minHeight: '60vh' }}>
-        <img src="/images/soy-boy-2.png" alt="Mascot Left" style={{ position: 'fixed', left: '-220px', top: '50%', transform: 'translateY(-50%)', height: 780, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
-        <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'auto'}}>
-          {/* Food slideshow centered above the logo */}
-          <FoodSlideshow />
-          <img src="/images/soy-boys.png" alt="Soy Boys Logo" style={{ height: 900, width: 'auto', maxHeight: '45vw', display: 'block', margin: '0 -40px', imageRendering: 'auto', filter: 'none', zIndex: 1, alignSelf: 'center' }} />
+        {/* On mobile, move slideshow to the very top, 50% closer to the top. On desktop, keep layout unchanged. */}
+        {isMobile && (
+          <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto', marginTop: '4vh', marginBottom: 0, background: 'none', zIndex: 2, position: 'relative' }}>
+            <FoodSlideshow />
+          </div>
+        )}
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto', background: 'none', marginBottom: 24, marginTop: isMobile ? '32vh' : '8vh', gap: 0, position: 'relative', zIndex: 2, minHeight: '60vh' }}>
+          {/* Swap mascots only on mobile */}
+          {isMobile ? (
+            <>
+              {/* Blue hat mascot (soy-boy-2.png) on right, bigger and higher */}
+              <img src="/images/soy-boy-2.png" alt="Mascot Left" style={{ position: 'fixed', left: '-88vw', top: '53%', transform: 'translateY(-50%)', height: 480, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
+              <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'auto'}}>
+                <img src="/images/soy-boys-trimmed.png" alt="Soy Boys Logo" style={{ height: 420, width: 'auto', maxHeight: '38vw', display: 'block', margin: '-288px 0 0 0', imageRendering: 'auto', filter: 'none', zIndex: 1, alignSelf: 'center' }} />
+              </div>
+              <img src="/images/soy-boy-1.png" alt="Mascot Right" style={{ position: 'fixed', right: '-100vw', top: '49.5%', transform: 'translateY(-50%)', height: 532, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
+            </>
+          ) : (
+            <>
+              <img src="/images/soy-boy-2.png" alt="Mascot Left" style={{ position: 'fixed', left: '-220px', top: '50%', transform: 'translateY(-50%)', height: 780, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
+              <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'auto'}}>
+                <FoodSlideshow />
+                <img src="/images/soy-boys.png" alt="Soy Boys Logo" style={{ height: 900, width: 'auto', maxHeight: '45vw', display: 'block', margin: '0 -40px', imageRendering: 'auto', filter: 'none', zIndex: 1, alignSelf: 'center' }} />
+              </div>
+              <img src="/images/soy-boy-1.png" alt="Mascot Right" style={{ position: 'fixed', right: '-340px', top: '47.5%', transform: 'translateY(-50%)', height: 900, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
+            </>
+          )}
         </div>
-        <img src="/images/soy-boy-1.png" alt="Mascot Right" style={{ position: 'fixed', right: '-340px', top: '47.5%', transform: 'translateY(-50%)', height: 900, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
-      </div>
       {/* Blurred flames at bottom */}
-      <div style={{ position: 'fixed', left: 0, bottom: '-10vh', width: '100vw', height: '65vh', zIndex: 0, pointerEvents: 'none', userSelect: 'none', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ position: 'fixed', left: 0, bottom: isMobile ? '-22vh' : '-10vh', width: '100vw', height: '65vh', zIndex: 0, pointerEvents: 'none', userSelect: 'none', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <img src="/images/flames.png" alt="Flames background" style={{ position: 'absolute', left: '-10vw', bottom: 0, width: '120vw', height: '100%', minHeight: 180, objectFit: 'cover', opacity: 1, filter: 'blur(6px) brightness(1.12)' }} />
         <div style={{ position: 'absolute', left: 0, bottom: 0, width: '100vw', height: '100%', background: 'linear-gradient(to top, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.7) 30%, rgba(255,255,255,0.0) 70%)', pointerEvents: 'none' }} />
       </div>
       {/* NavBar moved above logo/mascots */}
       <main className='container' style={{ position: 'relative', zIndex: 2, marginTop: 0, marginBottom: 60, fontFamily: "'Segoe UI', Helvetica Neue, Arial, sans-serif" }}>
-            {/* Chef-Made Plant Based Banner */}
-            <div style={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              margin: '0 auto 24px auto',
-            }}>
-              <span style={{
-                color: '#1976D2',
-                fontFamily: 'Luckiest Guy, Impact, Arial, sans-serif',
-                fontWeight: 900,
-                fontSize: 112, // doubled from 56
-                letterSpacing: '2px',
-                textAlign: 'center',
-                lineHeight: 1.1,
-                display: 'block',
-                margin: '0 auto',
-                padding: '0 12px',
-                background: 'none',
-                border: 'none',
-                borderRadius: 0,
-                boxShadow: 'none',
-                userSelect: 'none',
-                maxWidth: '98vw',
+            {/* Chef-Made Plant Based Banner (desktop only) */}
+            {!isMobile && (
+              <div style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                margin: '0 auto 24px auto',
               }}>
-                CHEF-MADE.<br />PLANT BASED.
-              </span>
-            </div>
+                <span style={{
+                  color: '#1976D2',
+                  fontFamily: 'Luckiest Guy, Impact, Arial, sans-serif',
+                  fontWeight: 900,
+                  fontSize: 112, // doubled from 56
+                  letterSpacing: '2px',
+                  textAlign: 'center',
+                  lineHeight: 1.1,
+                  display: 'block',
+                  margin: '0 auto',
+                  padding: '0 12px',
+                  background: 'none',
+                  border: 'none',
+                  borderRadius: 0,
+                  boxShadow: 'none',
+                  userSelect: 'none',
+                  maxWidth: '98vw',
+                }}>
+                  CHEF-MADE.<br />PLANT BASED.
+                </span>
+              </div>
+            )}
 
             {/* Products Section */}
             <section id="products" style={{ marginTop: 80, marginBottom: 80, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -175,7 +198,7 @@ export default function Home() {
                 maxWidth: '90vw',
               }}>Services</h1>
 
-              <div style={{background: 'rgba(255,251,230,0.8)', borderRadius: 16, boxShadow: '0 2px 12px #FFD60033', padding: 32, textAlign: 'center', margin: 0}}>
+              <div style={{background: 'rgba(255,251,230,0.8)', borderRadius: 16, boxShadow: '0 2px 12px #FFD60033', padding: 40, textAlign: 'center', margin: 0}}>
                 <h2 style={{
                   textAlign: 'center',
                   color: '#111',
@@ -189,7 +212,7 @@ export default function Home() {
                   borderRadius: 0,
                   padding: 0
                 }}>Private Cheffing</h2>
-                <p style={{fontSize: 32, margin: 0}}>
+                <p style={{fontSize: 32, textAlign: 'center', marginBottom: 24, marginTop: 0}}>
                   <span style={{display:'block',background:'rgba(255,255,255,0.85)',borderRadius:12,padding:'18px 24px',margin:'0 auto 18px auto',maxWidth:700}}>
                     With over a dozen years in the culinary industry working at Michelin-starred kitchens in New York City and Chicago, Chef Harris Khan can bring high-end dining to your kitchen table.
                   </span>
@@ -210,7 +233,7 @@ export default function Home() {
                   borderRadius: 0,
                   padding: 0
                 }}>Catering</h2>
-                <p style={{fontSize: 32, margin: 0}}>
+                <p style={{fontSize: 32, textAlign: 'center', marginBottom: 24, marginTop: 0}}>
                   <span style={{display:'block',background:'rgba(255,255,255,0.85)',borderRadius:12,padding:'18px 24px',margin:'0 auto 18px auto',maxWidth:700, border: 'none', boxShadow: 'none'}}>
                     Let Soy Boys cater your next event with delicious dishes that will impress every guest. We handle events of all sizes with care and creativity. We'll work with you to make a menu that matches your unique vision.
                   </span>
