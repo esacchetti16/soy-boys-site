@@ -14,8 +14,8 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet" />
-        <meta property="og:image" content="/thumbnail.png" />
-        <meta property="twitter:image" content="/thumbnail.png" />
+        <meta property="og:image" content="https://soyboyskitchen.com/thumbnail.png" />
+        <meta property="twitter:image" content="https://soyboyskitchen.com/thumbnail.png" />
       </Head>
       <Component {...pageProps} />
     </>
