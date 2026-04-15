@@ -30,21 +30,22 @@ export default function Home() {
           {/* Swap mascots only on mobile */}
           {isMobile ? (
             <>
-              {/* Blue hat mascot (soy-boy-2.png) on right, bigger and higher */}
-              <img src="/images/soy-boy-2.png" alt="Mascot Left" style={{ position: 'fixed', left: '-88vw', top: '53%', transform: 'translateY(-50%)', height: 480, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
+              {/* Double mascot replaces both mascots */}
+              <img src="/images/Double mascot.png" alt="Double Mascot" style={{ position: 'fixed', left: '49%', top: '48%', transform: 'translate(-50%, -50%)', height: 240, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
               <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'auto'}}>
-                <img src="/images/soy-boys-trimmed.png" alt="Soy Boys Logo" style={{ height: 420, width: 'auto', maxHeight: '38vw', display: 'block', margin: '-288px 0 0 0', imageRendering: 'auto', filter: 'none', zIndex: 1, alignSelf: 'center' }} />
+                <img src="/images/soy-boys-trimmed.png" alt="Soy Boys Logo" style={{ height: 420, width: 'auto', maxWidth: '90vw', maxHeight: '38vw', display: 'block', margin: '-300px 0 0 0', imageRendering: 'auto', filter: 'none', zIndex: 1, alignSelf: 'center' }} />
               </div>
-              <img src="/images/soy-boy-1.png" alt="Mascot Right" style={{ position: 'fixed', right: '-100vw', top: '49.5%', transform: 'translateY(-50%)', height: 532, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
+              {/* Only one mascot image needed */}
             </>
           ) : (
             <>
-              <img src="/images/soy-boy-2.png" alt="Mascot Left" style={{ position: 'fixed', left: '-220px', top: '50%', transform: 'translateY(-50%)', height: 780, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
+              {/* Double mascot replaces both mascots */}
+              <img src="/images/Double mascot.png" alt="Double Mascot" style={{ position: 'fixed', left: '49%', top: '50%', transform: 'translate(-50%, -50%)', height: 810, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
               <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'auto'}}>
                 <FoodSlideshow />
                 <img src="/images/soy-boys.png" alt="Soy Boys Logo" style={{ height: 900, width: 'auto', maxHeight: '45vw', display: 'block', margin: '0 -40px', imageRendering: 'auto', filter: 'none', zIndex: 1, alignSelf: 'center' }} />
               </div>
-              <img src="/images/soy-boy-1.png" alt="Mascot Right" style={{ position: 'fixed', right: '-340px', top: '47.5%', transform: 'translateY(-50%)', height: 900, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
+              {/* Only one mascot image needed */}
             </>
           )}
         </div>
@@ -94,7 +95,7 @@ export default function Home() {
                 border: 'none',
                 borderRadius: 18,
                 display: 'inline-block',
-                padding: '18px 56px',
+                padding: isMobile ? '14px 16px' : '18px 56px',
                 margin: '0 auto 32px auto',
                 color: '#111',
                 background: '#FFD600',
@@ -103,8 +104,9 @@ export default function Home() {
                 boxShadow: '0 2px 16px #FFD60044',
                 letterSpacing: '2px',
                 width: 'auto',
-                minWidth: 220,
-                maxWidth: '90vw',
+                minWidth: isMobile ? undefined : 220,
+                maxWidth: isMobile ? '96vw' : '90vw',
+                boxSizing: 'border-box',
               }}>Products</h1>
               <div style={{width: '100%', maxWidth: 900, margin: '0 auto', marginBottom: 48, background: 'rgba(255,251,230,0.8)', borderRadius: 16, boxShadow: '0 2px 12px #FFD60033', padding: 40, textAlign: 'center'}}>
                                 <div style={{
@@ -131,7 +133,7 @@ export default function Home() {
                 }}>Prepared Meals</h2>
                 <p style={{fontSize: 32, textAlign: 'center', marginBottom: 24}}>
                   <span style={{display:'block',background:'rgba(255,255,255,0.85)',borderRadius:12,padding:'18px 24px',margin:'0 auto 18px auto',maxWidth:700}}>
-                    Our ready-to-eat meals are elevated plant-based dining in a box that you can enjoy anywhere! These inspired recipes aren't only convenient, but they're made with clean ingredients that will get you feeling <em>right</em>.
+                    Our ready-to-eat meals are elevated plant-based dining that you can enjoy anywhere! These inspired recipes aren't only convenient, but they're made with clean ingredients that will get you feeling <em>right</em>.
                   </span>
                 </p>
                 <div style={{display: 'flex', justifyContent: 'center', gap: 32, flexWrap: 'wrap', marginBottom: 32}}>
@@ -266,8 +268,11 @@ export default function Home() {
               </div>
               <div style={{width: '100%', maxWidth: 960, margin: '0 auto', textAlign: 'center', display: 'block', padding: 0, border: 'none', background: 'none'}}>
                 <div style={{fontWeight: 700, fontSize: 28, color: '#1976D2', margin: '32px 0 18px 0', fontFamily: "'Lilita One', Impact, Arial, sans-serif"}}>Digitally</div>
-                <div style={{margin: '0 auto 10px auto', fontWeight: 700, fontSize: 22, color: '#E1306C', fontFamily: "'Lilita One', Impact, Arial, sans-serif", letterSpacing: '1px', textAlign: 'center', maxWidth: 960}}>
-                  <a href="https://instagram.com/soyboyskitchen" target="_blank" rel="noopener noreferrer" style={{color: '#E1306C', textDecoration: 'none'}}>@soyboyskitchen</a>
+                <div style={{margin: '0 auto 10px auto', fontWeight: 700, fontSize: 22, color: '#E1306C', fontFamily: "'Lilita One', Impact, Arial, sans-serif", letterSpacing: '1px', textAlign: 'center', maxWidth: 960, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8}}>
+                  <a href="https://instagram.com/soyboyskitchen" target="_blank" rel="noopener noreferrer" style={{display: 'flex', alignItems: 'center', color: '#E1306C', textDecoration: 'none', gap: 8}}>
+                    <img src="/images/IG Logo.webp" alt="Instagram" style={{width: 26, height: 26, verticalAlign: 'middle', marginRight: 4, display: 'inline-block'}} />
+                    @soyboyskitchen
+                  </a>
                 </div>
                 <iframe src="https://snapwidget.com/embed/1121761" className="snapwidget-widget" allowtransparency="true" frameBorder="0" scrolling="no" style={{border: 'none', overflow: 'hidden', width: 960, height: 480, borderRadius: 18, display: 'block', margin: '0 auto 4px auto', background: 'none', padding: 0}} title="Posts from Instagram"></iframe>
               </div>
