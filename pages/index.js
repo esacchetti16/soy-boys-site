@@ -358,7 +358,7 @@ export default function Home() {
                   width: '100%',
                   textAlign: 'center'
                 }}>
-                <p style={{fontSize: 16, marginBottom: 18}}>For orders or inquiries, email <strong>admin@sous-tech.com</strong> or use the form below:</p>
+                <p style={{fontSize: 16, marginBottom: 18}}>For orders or inquiries,<br /><strong>admin@sous-tech.com</strong><br />or use the form below:</p>
                 {state.succeeded ? (
                   <p style={{ color: '#1976D2', fontWeight: 700, fontSize: 22, margin: '24px 0' }}>Thank you for your message! We'll be in touch soon.</p>
                 ) : (

@@ -16,7 +16,13 @@ export default function NavBarMobile() {
       </button>
       {/* Spacer to keep logo right-aligned */}
       <div style={{flex: 1}} />
-      <img src="/images/soy-boys-trimmed.png" alt="Soy Boys Logo" style={{height: 40, marginRight: 12, objectFit: 'contain'}} />
+      <img
+        src="/images/soy-boys-trimmed.png"
+        alt="Soy Boys Logo"
+        style={{height: 40, marginRight: 12, objectFit: 'contain', cursor: 'pointer'}}
+        onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+        title="Back to top"
+      />
       {open && (
         <div className="nav-mobile-menu">
           <a href="#products" onClick={handleNavClick('products')}><span>Products</span></a>
