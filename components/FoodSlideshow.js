@@ -4,6 +4,7 @@ const images = [
   '/images/Meal 1 PNG.png',
   '/images/Meal 2 PNG.png',
   '/images/Meal 3 PNG.png',
+  '/images/Lemon Tahini Pasta.png',
 ];
 
 export default function FoodSlideshow() {

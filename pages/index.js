@@ -31,19 +31,19 @@ export default function Home() {
           {isMobile ? (
             <>
               {/* Double mascot replaces both mascots */}
-              <img src="/images/Double mascot.png" alt="Double Mascot" style={{ position: 'fixed', left: '49%', top: '48%', transform: 'translate(-50%, -50%)', height: 240, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
-              <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'auto'}}>
-                <img src="/images/soy-boys-trimmed.png" alt="Soy Boys Logo" style={{ height: 420, width: 'auto', maxWidth: '90vw', maxHeight: '38vw', display: 'block', margin: '-300px 0 0 0', imageRendering: 'auto', filter: 'none', zIndex: 1, alignSelf: 'center' }} />
+              <img src="/images/Double mascot.png" alt="Double Mascot" style={{ position: 'fixed', left: '49%', top: '48%', transform: 'translate(-50%, -50%)', height: 240, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 0, pointerEvents: 'none' }} />
+              <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'auto', position: 'relative', zIndex: 10}}>
+                <img src="/images/soy-boys-trimmed.png" alt="Soy Boys Logo" style={{ height: 420, width: 'auto', maxWidth: '90vw', maxHeight: '38vw', display: 'block', margin: '-300px 0 0 0', imageRendering: 'auto', filter: 'none', position: 'relative', zIndex: 10, alignSelf: 'center' }} />
               </div>
               {/* Only one mascot image needed */}
             </>
           ) : (
             <>
               {/* Double mascot replaces both mascots */}
-              <img src="/images/Double mascot.png" alt="Double Mascot" style={{ position: 'fixed', left: '49%', top: '50%', transform: 'translate(-50%, -50%)', height: 810, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 9999, pointerEvents: 'none' }} />
-              <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'auto'}}>
+              <img src="/images/Double mascot.png" alt="Double Mascot" style={{ position: 'fixed', left: '49%', top: '50%', transform: 'translate(-50%, -50%)', height: 810, width: 'auto', display: 'block', imageRendering: 'auto', filter: 'none', zIndex: 0, pointerEvents: 'none' }} />
+              <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'auto', position: 'relative', zIndex: 10}}>
                 <FoodSlideshow />
-                <img src="/images/soy-boys.png" alt="Soy Boys Logo" style={{ height: 900, width: 'auto', maxHeight: '45vw', display: 'block', margin: '0 -40px', imageRendering: 'auto', filter: 'none', zIndex: 1, alignSelf: 'center' }} />
+                <img src="/images/soy-boys.png" alt="Soy Boys Logo" style={{ height: 900, width: 'auto', maxHeight: '45vw', display: 'block', margin: '0 -40px', imageRendering: 'auto', filter: 'none', position: 'relative', zIndex: 10, alignSelf: 'center' }} />
               </div>
               {/* Only one mascot image needed */}
             </>
@@ -137,15 +137,15 @@ export default function Home() {
                   </span>
                 </p>
                 <div style={{display: 'flex', justifyContent: 'center', gap: 32, flexWrap: 'wrap', marginBottom: 32}}>
-                  {/* Yummy Noodle Bowl */}
-                  <div style={{width: 220, background: 'rgba(255,255,255,0.8)', borderRadius: 12, boxShadow: '0 2px 12px #FFD60033', padding: 16, textAlign: 'center'}}>
-                    <img src="/images/Yummy Noodle Bowl.png" alt="Yummy Noodle Bowl" style={{width: '100%', borderRadius: 8, marginBottom: 8}} />
-                    <div style={{fontWeight: 700, fontSize: 20, marginBottom: 4}}>Yummy Noodle Bowl</div>
+                  <div style={{width: 220, background: 'rgba(255,255,255,0.8)', borderRadius: 12, boxShadow: '0 2px 12px #FFD60033', padding: 16, textAlign: 'center', minHeight: 160}}>
+                    <div style={{fontWeight: 700, fontSize: 20, marginBottom: 8}}>Lemon Tahini Pasta</div>
+                    <div style={{fontSize: 16, color: '#444', marginBottom: 8}}>Dressed cavatappi with house-made seitan</div>
+                    <div style={{fontStyle: 'italic', color: '#888', fontSize: 16}}>*photos coming soon*</div>
                   </div>
-                  {/* Calabrian Pesto Pasta */}
-                  <div style={{width: 220, background: 'rgba(255,255,255,0.8)', borderRadius: 12, boxShadow: '0 2px 12px #FFD60033', padding: 16, textAlign: 'center'}}>
-                    <img src="/images/Calabrian Pesto Pasta.jpg" alt="Calabrian Pesto Pasta" style={{width: '100%', borderRadius: 8, marginBottom: 8}} />
-                    <div style={{fontWeight: 700, fontSize: 20, marginBottom: 4}}>Calabrian Pesto Pasta</div>
+                  <div style={{width: 220, background: 'rgba(255,255,255,0.8)', borderRadius: 12, boxShadow: '0 2px 12px #FFD60033', padding: 16, textAlign: 'center', minHeight: 160}}>
+                    <div style={{fontWeight: 700, fontSize: 20, marginBottom: 8}}>Korean BBQ Bowl</div>
+                    <div style={{fontSize: 16, color: '#444', marginBottom: 8}}>Sesame noodles with house-made seitan and pickled vegetables</div>
+                    <div style={{fontStyle: 'italic', color: '#888', fontSize: 16}}>*photos coming soon*</div>
                   </div>
                 </div>
                 <h2 style={{
@@ -167,9 +167,9 @@ export default function Home() {
                 </p>
                 <div style={{display: 'flex', justifyContent: 'center', gap: 32, flexWrap: 'wrap'}}>
                   {/* Cheesesteak */}
-                  <div style={{width: 220, background: 'rgba(255,255,255,0.8)', borderRadius: 12, boxShadow: '0 2px 12px #FFD60033', padding: 16, textAlign: 'center', minHeight: 160}}>
+                  <div style={{width: 220, background: 'rgba(255,255,255,0.8)', borderRadius: 12, boxShadow: '0 2px 12px #FFD60033', padding: 16, textAlign: 'center'}}>
+                    <img src="/images/Cheesesteak Seitan.jpg" alt="Cheesesteak Seitan" style={{width: '100%', borderRadius: 8, marginBottom: 8}} />
                     <div style={{fontWeight: 700, fontSize: 20, marginBottom: 4}}>Cheesesteak</div>
-                    <div style={{fontStyle: 'italic', color: '#888', fontSize: 16}}>*photos coming soon*</div>
                   </div>
                   {/* Korean BBQ */}
                   <div style={{width: 220, background: 'rgba(255,255,255,0.8)', borderRadius: 12, boxShadow: '0 2px 12px #FFD60033', padding: 16, textAlign: 'center', minHeight: 160}}>
@@ -240,6 +240,9 @@ export default function Home() {
                     Let Soy Boys cater your next event with delicious dishes that will impress every guest. We handle events of all sizes with care and creativity. We'll work with you to make a menu that matches your unique vision.
                   </span>
                 </p>
+                <div style={{display:'flex',justifyContent:'center',margin:'18px 0 0 0'}}>
+                  <img src="/images/Catering Photo.jpg" alt="Soy Boys Catering" style={{maxWidth:400,width:'100%',height:'auto',borderRadius:16,boxShadow:'0 2px 12px #FFD60033',background:'#fff'}} />
+                </div>
               </div>
             </section>
 
