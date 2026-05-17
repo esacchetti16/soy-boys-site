@@ -15,7 +15,7 @@ html,body,#__next{
 h1, h2, h3, .site-hero h1 {
   font-family: 'Lilita One', Impact, Arial, sans-serif !important;
 }
-nav a, .nav a, .nav-mobile-menu a, .sb-subsection-title {
+nav a, .nav a, .nav-desktop a, .nav-mobile-menu a, .sb-nav-link, .sb-subsection-title {
   font-family: var(--sb-fun) !important;
 }
 h1, .site-hero h1 { font-size: 6rem !important; letter-spacing: 1.5px; }

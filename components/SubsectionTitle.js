@@ -1,3 +1,7 @@
-export default function SubsectionTitle({ children }) {
-  return <h3 className="sb-subsection-title">{children}</h3>;
+export default function SubsectionTitle({ children, className = '' }) {
+  return (
+    <h3 className={`sb-subsection-title${className ? ` ${className}` : ''}`}>
+      {children}
+    </h3>
+  );
 }

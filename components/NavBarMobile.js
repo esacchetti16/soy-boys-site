@@ -24,13 +24,13 @@ export default function NavBarMobile() {
         title="Back to top"
       />
       {open && (
-        <div className="nav-mobile-menu">
-          <a href="#products" onClick={handleNavClick('products')}><span>Products</span></a>
-          <a href="#services" onClick={handleNavClick('services')}><span>Services</span></a>
-          <a href="#locations" onClick={handleNavClick('locations')}><span>Where to find us</span></a>
-          <a href="#about" onClick={handleNavClick('about')}><span>About</span></a>
-          <a href="#contact" onClick={handleNavClick('contact')}><span>Contact</span></a>
-        </div>
+        <nav className="nav-mobile-menu" aria-label="Site sections">
+          <a className="sb-nav-link" href="#products" onClick={handleNavClick('products')}>Products</a>
+          <a className="sb-nav-link" href="#services" onClick={handleNavClick('services')}>Services</a>
+          <a className="sb-nav-link" href="#locations" onClick={handleNavClick('locations')}>Where to find us</a>
+          <a className="sb-nav-link" href="#about" onClick={handleNavClick('about')}>About</a>
+          <a className="sb-nav-link" href="#contact" onClick={handleNavClick('contact')}>Contact</a>
+        </nav>
       )}
     </div>
   );

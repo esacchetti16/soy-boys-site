@@ -129,12 +129,10 @@ export default function Home() {
 
             <section id="locations" className="sb-section">
               <SectionTitle isMobile={isMobile}>Where to find us</SectionTitle>
-              <div className="sb-panel" style={{ marginBottom: 32 }}>
-                <div className="sb-accent-label">Physically</div>
+              <div className="sb-panel sb-panel--wide">
+                <SubsectionTitle>Physically</SubsectionTitle>
                 <LocationsMap />
-              </div>
-              <div className="sb-panel sb-panel--wide" style={{ background: 'transparent', boxShadow: 'none', padding: 0 }}>
-                <div className="sb-accent-label" style={{ marginTop: 0 }}>Digitally</div>
+                <SubsectionTitle className="sb-subsection-title--spaced">Digitally</SubsectionTitle>
                 <div className="sb-ig-label">
                   <a href="https://instagram.com/soyboyskitchen" target="_blank" rel="noopener noreferrer">
                     <img src="/images/IG Logo.webp" alt="" width={26} height={26} style={{ display: 'inline-block' }} />

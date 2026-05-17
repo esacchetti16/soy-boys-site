@@ -38,6 +38,19 @@
   left: 0;
 }
 
+/* Header nav — match yellow section heading typeface */
+.nav-desktop,
+.nav-desktop a,
+.nav-mobile-menu,
+.nav-mobile-menu a {
+  font-family: 'Lilita One', Impact, Arial, sans-serif !important;
+}
+
+.nav-desktop a,
+.nav-mobile-menu a {
+  font-weight: 400;
+}
+
 .site-main {
   font-family: var(--sb-font-body);
 }
@@ -102,13 +115,17 @@
 .sb-subsection-title {
   text-align: center;
   color: var(--sb-text);
-  font-family: var(--sb-font-display);
+  font-family: 'Lilita One', Impact, Arial, sans-serif;
   font-weight: 900;
   font-size: clamp(1.35rem, 3vw, 1.75rem) !important;
   margin: 0 0 0.5rem 0;
   background: none;
   border: none;
   padding: 0;
+}
+
+.sb-subsection-title--spaced {
+  margin-top: 2.5rem;
 }
 
 .sb-copy-wrap {

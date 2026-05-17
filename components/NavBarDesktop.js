@@ -8,12 +8,12 @@ export default function NavBarDesktop() {
         >
           <img src="/images/soy-boys-trimmed.png" alt="Soy Boys Logo" style={{ height: 48, width: 'auto', display: 'block', objectFit: 'contain', pointerEvents: 'none' }} />
         </div>
-        <nav className='nav-desktop' style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 48, fontFamily: "'Lilita One', Impact, Arial, sans-serif", fontSize: '3rem', letterSpacing: '0.5px', padding: '22px 0 12px 0', fontWeight: 400 }}>
-          <a href="#products" onClick={e => { e.preventDefault(); document.getElementById('products')?.scrollIntoView({behavior: 'smooth'});}}><span>Products</span></a>
-          <a href="#services" onClick={e => { e.preventDefault(); document.getElementById('services')?.scrollIntoView({behavior: 'smooth'});}}><span>Services</span></a>
-          <a href="#locations" onClick={e => { e.preventDefault(); document.getElementById('locations')?.scrollIntoView({behavior: 'smooth'});}}><span>Where to find us</span></a>
-          <a href="#about" onClick={e => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({behavior: 'smooth'});}}><span>About</span></a>
-          <a href="#contact" onClick={e => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});}}><span>Contact</span></a>
+        <nav className="nav-desktop" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 48, fontSize: '3rem', letterSpacing: '0.5px', padding: '22px 0 12px 0' }}>
+          <a className="sb-nav-link" href="#products" onClick={e => { e.preventDefault(); document.getElementById('products')?.scrollIntoView({behavior: 'smooth'});}}>Products</a>
+          <a className="sb-nav-link" href="#services" onClick={e => { e.preventDefault(); document.getElementById('services')?.scrollIntoView({behavior: 'smooth'});}}>Services</a>
+          <a className="sb-nav-link" href="#locations" onClick={e => { e.preventDefault(); document.getElementById('locations')?.scrollIntoView({behavior: 'smooth'});}}>Where to find us</a>
+          <a className="sb-nav-link" href="#about" onClick={e => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({behavior: 'smooth'});}}>About</a>
+          <a className="sb-nav-link" href="#contact" onClick={e => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});}}>Contact</a>
         </nav>
       </div>
     </header>
