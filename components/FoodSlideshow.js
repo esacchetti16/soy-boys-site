@@ -7,44 +7,43 @@ const images = [
   '/images/Lemon Tahini Pasta.png',
 ];
 
+const INTERVAL_MS = 4000;
+
 export default function FoodSlideshow() {
   const [index, setIndex] = useState(0);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 1000);
-    return () => clearInterval(interval);
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReduceMotion(mq.matches);
+    const onChange = (e) => setReduceMotion(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
   }, []);
 
+  useEffect(() => {
+    if (reduceMotion) return undefined;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, INTERVAL_MS);
+    return () => clearInterval(interval);
+  }, [reduceMotion]);
+
   return (
-    <div style={{
-      width: 220,
-      height: 220,
-      borderRadius: '50%',
-      overflow: 'hidden',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: 'rgba(255,255,255,0.85)',
-      boxShadow: 'none',
-      margin: '32px 32px 0 32px', // Slide down with top margin
-      position: 'relative',
-      zIndex: 3,
-    }}>
-      <img
-        src={images[index]}
-        alt="Food Slideshow"
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          borderRadius: '50%',
-          border: 'none',
-          boxShadow: 'none',
-          background: 'none',
-        }}
-      />
+    <div
+      className="food-slideshow"
+      role="region"
+      aria-label="Featured dishes"
+      aria-live="polite"
+    >
+      {images.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt=""
+          className={`food-slideshow__img${i === index ? ' food-slideshow__img--active' : ''}`}
+        />
+      ))}
     </div>
   );
 }

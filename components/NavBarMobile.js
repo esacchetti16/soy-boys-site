@@ -9,7 +9,7 @@ export default function NavBarMobile() {
   };
   return (
     <div className="nav-mobile" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', zIndex: 9999, background: 'rgba(255,247,230,0.5)', boxShadow: '0 2px 12px rgba(0,0,0,0.07)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 56 }}>
-      <button className="nav-hamburger" aria-label="Open navigation" onClick={() => setOpen(o => !o)} style={{marginLeft: 12}}>
+      <button className="nav-hamburger" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} onClick={() => setOpen(o => !o)} style={{marginLeft: 12}}>
         <span className="hamburger-bar" />
         <span className="hamburger-bar" />
         <span className="hamburger-bar" />

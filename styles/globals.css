@@ -1,7 +1,7 @@
 ﻿:root{
-  --sb-red:#c60b1e; /* bills-like red */
-  --sb-blue:#00338d; /* bills-like blue */
-  --sb-yellow:#ffd400;
+  --sb-red:#c60b1e;
+  --sb-blue:#00338d;
+  --sb-yellow:#ffd600;
   --sb-fun: 'Lilita One', Impact, Arial, sans-serif;
 }
 html,body,#__next{
@@ -15,7 +15,7 @@ html,body,#__next{
 h1, h2, h3, .site-hero h1 {
   font-family: 'Lilita One', Impact, Arial, sans-serif !important;
 }
-body, .nav, nav a, .nav * {
+nav a, .nav a, .nav-mobile-menu a, .sb-section-title, .sb-subsection-title {
   font-family: var(--sb-fun) !important;
 }
 h1, .site-hero h1 { font-size: 6rem !important; letter-spacing: 1.5px; }
@@ -54,6 +54,8 @@ nav a:hover, .nav a:hover {
   h3 {
     font-size: 1.2rem !important;
   }
+}
+
 @media (max-width: 900px) {
   .nav-mobile {
     display: flex;
