@@ -70,38 +70,44 @@ export default function Home() {
 
             <section id="products" className="sb-section">
               <SectionTitle isMobile={isMobile}>Products</SectionTitle>
-              <div className="sb-panel" style={{ marginBottom: 48 }}>
+              <div className="sb-panel sb-panel--products" style={{ marginBottom: 48 }}>
                 <p className="sb-lead">
                   Produced and delivered weekly, reach out if you want these products at your storefront or in your home
                 </p>
                 <SubsectionTitle>Prepared Meals</SubsectionTitle>
+                <div className="sb-section-photo sb-section-photo--large">
+                  <img src="/images/MealPhotoshoot/KBBQNB_and_LTP.JPG" alt="Lemon Tahini Pasta and Korean BBQ Bowl in Soy Boys meal boxes" />
+                </div>
                 <CopyBlock>
                   Our ready-to-eat meals are elevated plant-based dining that you can enjoy anywhere! These inspired recipes aren&apos;t only convenient, but they&apos;re made with clean ingredients that will get you feeling <em>right</em>.
                 </CopyBlock>
                 <div className="sb-product-grid sb-product-grid--spaced">
-                  <div className="sb-product-card sb-product-card--placeholder">
+                  <div className="sb-product-card">
+                    <img src="/images/MealPhotoshoot/LT_Plated.JPG" alt="Lemon Tahini Pasta" />
                     <div className="sb-product-card__title">Lemon Tahini Pasta</div>
                     <div className="sb-product-card__desc">Dressed cavatappi with house-made seitan</div>
-                    <div className="sb-product-card__note">*photos coming soon*</div>
                   </div>
-                  <div className="sb-product-card sb-product-card--placeholder">
+                  <div className="sb-product-card">
+                    <img src="/images/MealPhotoshoot/KBBQ_Bowl_Plated.JPG" alt="Korean BBQ Bowl" />
                     <div className="sb-product-card__title">Korean BBQ Bowl</div>
                     <div className="sb-product-card__desc">Sesame noodles with house-made seitan and pickled vegetables</div>
-                    <div className="sb-product-card__note">*photos coming soon*</div>
                   </div>
                 </div>
                 <SubsectionTitle>St**k</SubsectionTitle>
+                <div className="sb-section-photo sb-section-photo--large">
+                  <img src="/images/MealPhotoshoot/Stk_Products.JPG" alt="Soy Boys St**k seitan products" />
+                </div>
                 <CopyBlock>
                   We&apos;re not trying to replace meat—we&apos;re improving on it. Our line of seitan provides the protein you want in a meal while already being perfectly seasoned and convenient to prepare. St**k is a cheat code for any savory snack or as a protein-packed enhancer for sandwiches, pastas, or salads.
                 </CopyBlock>
                 <div className="sb-product-grid">
                   <div className="sb-product-card">
-                    <img src="/images/Cheesesteak Seitan.jpg" alt="Cheesesteak Seitan" />
+                    <img src="/images/MealPhotoshoot/CheeseSteak.JPG" alt="Cheesesteak Seitan" />
                     <div className="sb-product-card__title">Cheesesteak</div>
                   </div>
-                  <div className="sb-product-card sb-product-card--placeholder">
+                  <div className="sb-product-card">
+                    <img src="/images/MealPhotoshoot/KBBQ.JPG" alt="Korean BBQ Seitan" />
                     <div className="sb-product-card__title">Korean BBQ</div>
-                    <div className="sb-product-card__note">*photos coming soon*</div>
                   </div>
                 </div>
               </div>
